@@ -10,6 +10,17 @@ def linear_search(search_list, target):
     return None
 
 
-my_list = ['a', 'b', 'c', 'd', 'e']
+def verify(index):
+    if index is not None:
+        print(f"Target found at index {index}")
+    else:
+        print('Target was not found in the list')
 
-print(linear_search(my_list, 'd'))
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+
+result = linear_search(numbers, 16)
+verify(result)
+
+result = linear_search(numbers, 7)
+verify(result)
