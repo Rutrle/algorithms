@@ -41,11 +41,36 @@ class LinkedList:
 
         return count
 
+    def add(self, data):
+        """
+        Adds a new Node containing data at the head of the list
+        """
+        new_node = Node(data)
+        new_node.next_node = self.head
+        self.head = new_node
 
-n1 = Node(1)
-print(Node.data)
-n2 = Node(2)
-print(Node.data)
-n3 = Node(3)
-print(Node.data)
-print(Node.datas)
+    def __repr__(self):
+        """
+        Return a string representation of the list.
+        Takes O(n) time.
+        """
+        nodes = []
+        current = self.head
+        while current:
+            if current is self.head:
+                nodes.append(f"[Head: {current.data}]")
+            elif current.next_node is None:
+                nodes.append("[Tail: %s]" % current.data)
+            else:
+                nodes.append("[%s]" % current.data)
+            current = current.next_node
+        return '-> '.join(nodes)
+
+
+l = LinkedList()
+N1 = Node(10)
+l.head = N1
+print(l.size())
+l.add(5)
+print(l.size())
+print(l)
