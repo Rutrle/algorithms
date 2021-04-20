@@ -89,6 +89,29 @@ class LinkedList:
             prev_node_obj.next_node = new
             new.next_node = next_node_obj
 
+    def remove(self, key):
+        """
+        removes node containing data matching the key, 
+        returns the node or if key was not found None,
+        this takes O(n) time
+        """
+        current = self.head
+        previous = None
+        found = False
+
+        while current and not found:  # current must be a valid node and the key was not found
+            if current.data == key and current is self.head:
+                found = True
+                self.head = current.next_node
+            elif current.data == key:
+                found = True
+                previous.next_node = current.next_node
+            else:
+                previous = current
+                current = current.next_node
+
+        return current
+
     def __repr__(self):
         """
         Return a string representation of the list.
