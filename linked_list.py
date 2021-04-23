@@ -129,16 +129,16 @@ class LinkedList:
             current = current.next_node
         return '-> '.join(nodes)
 
+if __name__ == "__main__":
+    l = LinkedList()
+    N1 = Node(10)
+    l.head = N1
+    print(l.size())
+    l.add(5)
+    l.add(105)
+    l.add(2)
 
-l = LinkedList()
-N1 = Node(10)
-l.head = N1
-print(l.size())
-l.add(5)
-l.add(105)
-l.add(2)
-
-print(l.size())
-print(l)
-n = l.search(5)
-print(n)
+    print(l.size())
+    print(l)
+    n = l.search(5)
+    print(n)
