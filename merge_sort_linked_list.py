@@ -6,6 +6,7 @@ def merge_sort(linked_list):
     Sorts a linked list in ascending order
     - recursively divide the linked list into sublists containing a single node
     - repeatedly merge the sublists to produce sorted sublists until one remains
+    runs in O(k n log n)
     """
 
     if linked_list.size() == 1 or linked_list.head == None:
@@ -21,6 +22,7 @@ def merge_sort(linked_list):
 def split(linked_list):
     """
     divide the unsorted list at midpoint into sublists
+    takes O(k log n) time
     """
     if linked_list == None or linked_list.head == None:
         left_half = linked_list
@@ -45,6 +47,7 @@ def merge(left, right):
     """
     Merges two linked lists, sorting by data in nodes¨
     Returns a new, merged list
+    runs in linear time
     """
     # crate a new linked list containing nodes from merging left and right
     merged = LinkedList()
