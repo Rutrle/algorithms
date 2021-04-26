@@ -112,6 +112,19 @@ class LinkedList:
 
         return current
 
+    def node_at_index(self, index):
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            position = 0
+
+            while position < index:
+                current = current.next_node
+                position += 1
+
+        return current
+
     def __repr__(self):
         """
         Return a string representation of the list.
@@ -128,6 +141,7 @@ class LinkedList:
                 nodes.append("[%s]" % current.data)
             current = current.next_node
         return '-> '.join(nodes)
+
 
 if __name__ == "__main__":
     l = LinkedList()
