@@ -18,14 +18,14 @@ def decimal_to_binary2_wrap(number):
 
 
 def decimal_to_binary3(number):
-    def decimal_to_binary2(number, _result=""):
+    def decimal_to_binary_in(number, _result=""):
         if number == 0:
             return _result
         else:
             _result = str(number % 2) + _result
-            return decimal_to_binary2(number//2, _result)
+            return decimal_to_binary_in(number//2, _result)
 
-    return decimal_to_binary2(number)
+    return decimal_to_binary_in(number)
 
 
 print(decimal_to_binary(1))
