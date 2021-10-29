@@ -1,7 +1,11 @@
-from linked_list import LinkedList, Node
+from linked_list import LinkedList
 
 
 def linked_list_reverse(head):
+    '''
+    reverse linked list, returns new head
+    :param head: Node
+    '''
 
     if head.data == None or head.next == None:
         return head
@@ -16,7 +20,7 @@ k = [1, 2, 3, 4, 5]
 my_ll = LinkedList(k)
 
 print(my_ll)
-# print(linked_list_reverse(my_ll.head))
+
 new_head = linked_list_reverse(my_ll.head)
 print(new_head)
 
