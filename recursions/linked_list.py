@@ -27,9 +27,10 @@ class Node:
         return str(self.data)
 
 
-L = [1, 2, 3, 4, 5, 6]
-my_LL = LinkedList(L)
-print(my_LL)
-print(my_LL.head)
-print(my_LL.head.next)
-print(my_LL.head.next.next)
+if __name__ == '__main__':
+    L = [1, 2, 3, 4, 5, 6]
+    my_LL = LinkedList(L)
+    print(my_LL)
+    print(my_LL.head)
+    print(my_LL.head.next)
+    print(my_LL.head.next.next)
