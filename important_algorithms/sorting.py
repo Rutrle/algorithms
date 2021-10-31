@@ -32,6 +32,22 @@ def insertion_sort(array):
     return array
 
 
+def selection_sort(array):
+    '''
+    takes O(n**2) time
+    :param array: list
+    '''
+    for i in range(len(array)):
+        minimum = i
+        for j in range(i, len(array)):
+            if array[j] < array[minimum]:
+                minimum = j
+
+        array[i], array[minimum] = array[minimum], array[i]
+
+    return array
+
+
 unsorted_list = [2, 5, 4, 1, 8, 44, -5, 6, 7, 2, 4, 55]
 
 print(bubble_sort(unsorted_list))
@@ -39,3 +55,7 @@ print(bubble_sort(unsorted_list))
 unsorted_list = [2, 5, 4, 1, 8, 44, -5, 6, 7, 2, 4, 55]
 
 print(insertion_sort(unsorted_list))
+
+unsorted_list = [2, 5, 4, 1, 8, 44, -5, 6, 7, 2, 4, 55]
+
+print(selection_sort(unsorted_list))
