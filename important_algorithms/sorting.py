@@ -48,6 +48,36 @@ def selection_sort(array):
     return array
 
 
+def merge_sort(array):
+    if len(array) <= 1:
+        return array
+
+    middle = len(array)//2
+
+    left, right = merge_sort(array[:middle]),  merge_sort(array[middle:])
+
+    i = 0
+    j = 0
+    sorted_array = []
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            sorted_array.append(left[i])
+            i = i+1
+        else:
+            sorted_array.append(right[j])
+            j = j+1
+
+    while i < len(left):
+        sorted_array.append(left[i])
+        i = i+1
+
+    while j < len(right):
+        sorted_array.append(right[j])
+        j = j+1
+
+    return sorted_array
+
+
 unsorted_list = [2, 5, 4, 1, 8, 44, -5, 6, 7, 2, 4, 55]
 
 print(bubble_sort(unsorted_list))
@@ -59,3 +89,7 @@ print(insertion_sort(unsorted_list))
 unsorted_list = [2, 5, 4, 1, 8, 44, -5, 6, 7, 2, 4, 55]
 
 print(selection_sort(unsorted_list))
+
+unsorted_list = [2, 5, 4, 1, 8, 44, -5, 6, 7, 2, 4, 55]
+
+print(merge_sort(unsorted_list))
