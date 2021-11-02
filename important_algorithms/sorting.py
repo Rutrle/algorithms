@@ -49,6 +49,11 @@ def selection_sort(array):
 
 
 def merge_sort(array):
+    '''
+    takes O(n logn) time
+    :param array: list
+    '''
+
     if len(array) <= 1:
         return array
 
